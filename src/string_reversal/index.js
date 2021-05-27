@@ -19,4 +19,56 @@ export default function StringReversal(normalString) {
 
     return reversedString;
   };
+
+  this.reverseWithStack = function () {
+    let stringArray = [];
+    let reversedString = "";
+
+    for (let char of normalString) {
+      stringArray.push(char);
+    }
+
+    while (stringArray.length) {
+      reversedString += stringArray.pop();
+    }
+
+    return reversedString;
+  }
+
+  this.balancedExpressions = function () {
+    let expString = "(({}{(a)+{b}}))";
+    let stack = [];
+
+    let expressionPairs = {
+      '}': '{',
+      ']': '[',
+      '>': '<',
+      ')': '('
+    };
+
+    for (let char of expString) {
+
+      if (Object.values(expressionPairs).includes(char)) {
+        stack.push(char);
+      }
+
+      if (Object.keys(expressionPairs).includes(char)) {
+        if (!stack.length) {
+          return false;
+        }
+
+        let topOfStack = stack.pop();
+
+        if (topOfStack != expressionPairs[char]) {
+          return false;
+        }
+      }
+    }
+
+    return !stack.length;
+  }
 }
+
+
+let check = new StringReversal();
+console.log(check.balancedExpressions());
