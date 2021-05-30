@@ -1,4 +1,4 @@
 export default {
   verbose: true,
-  rootDir: './src/balanced_expressions'
+  rootDir: './src/queue_with_stack'
 };
