@@ -1,4 +1,4 @@
 export default {
   verbose: true,
-  rootDir: './src/queue_with_stack'
+  rootDir: './src/first_non_repeated_char'
 };

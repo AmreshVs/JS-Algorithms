@@ -46,7 +46,7 @@ test('QueueWithStack Test 3 - peek', () => {
   expect(() => queue.peek()).toThrow(/empty/i);
 });
 
-test('QueueWithStack Test 3 - isEmpty', () => {
+test('QueueWithStack Test 4 - isEmpty', () => {
   let queue = new QueueWithStack();
   queue.enqueue(3);
   queue.enqueue(4);
